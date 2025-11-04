@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your #MyPrakshaReel | Praksha Campaign</title>
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 50%, #fff7ed 100%);
+            min-height: 100vh;
+            padding: 20px;
+            margin-bottom: 200px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #f97316 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            stroke-width: 1.5;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 48px 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .section-header svg {
+            width: 24px;
+            height: 24px;
+            color: #ec4899;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .section p {
+            color: #4b5563;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .step {
+            display: flex;
+            gap: 16px;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+        }
+
+        .step:nth-child(2) .step-number {
+            background: linear-gradient(135deg, #a855f7, #f97316);
+        }
+
+        .step:nth-child(3) .step-number {
+            background: linear-gradient(135deg, #f97316, #ec4899);
+        }
+
+        .step:nth-child(4) .step-number {
+            background: linear-gradient(135deg, #ec4899, #a855f7);
+        }
+
+        .step-content h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: #4b5563;
+            margin-bottom: 12px;
+        }
+
+        .example-box {
+            background: #fdf2f8;
+            border-left: 4px solid #ec4899;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            color: #374151;
+            font-style: italic;
+        }
+
+        .step:nth-child(2) .example-box:nth-child(2) {
+            background: #fff7ed;
+            border-left-color: #f97316;
+        }
+
+        .tags-box {
+            background: #f3f4f6;
+            padding: 16px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .tags-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .tags-item svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .tags-item p {
+            margin: 0;
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .tags-item .tag-value {
+            font-family: 'Monaco', 'Courier New', monospace;
+            color: #ec4899;
+            font-weight: 600;
+        }
+
+        .step:nth-child(3) .tags-item:nth-child(2) svg {
+            color: #a855f7;
+        }
+
+        .step:nth-child(3) .tags-item:nth-child(2) .tag-value {
+            color: #a855f7;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .bullet-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4b5563;
+        }
+
+        .bullet-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #ec4899;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .reward-section {
+            background: linear-gradient(135deg, #fff7ed, #fdf2f8);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .reward-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .reward-header svg {
+            width: 24px;
+            height: 24px;
+            color: #f97316;
+        }
+
+        .reward-header h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .reward-section p {
+            color: #374151;
+            margin: 0;
+        }
+
+        .reward-section .highlight {
+            font-weight: 600;
+            color: #ea580c;
+        }
+
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ec4899, #a855f7, #f97316);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(236, 72, 153, 0.4);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .cta-button .sparkle {
+            animation: sparkle 0.6s ease;
+        }
+
+        .cta-button:hover .sparkle {
+            animation: sparkle 0.6s ease;
+        }
+
+        @keyframes sparkle {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(12deg); }
+        }
+
+        .cta-subtext {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        svg {
+            stroke: currentColor;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <svg viewBox="0 0 24 24">
+                    <path d="M23 7l-7 5 7 5V7z"></path>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+                <h1>Create Your #MyPrakshaReel</h1>
+                <p>Show the world how Praksha makes college life easier!</p>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <div class="section-header">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                        <h2>Intro</h2>
+                    </div>
+                    <p>Love using Praksha? Let's show the world how it makes your college life easier! Follow these simple steps to make your reel and get featured on Praksha's official Instagram page.</p>
+                </div>
+
+                <div class="section">
+                    <h2 style="font-size: 24px; font-weight: 700; color: #1f2937; margin-bottom: 24px;">How to Participate:</h2>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Open Instagram Reels</h3>
+                                <p>Record yourself or your friends using the Praksha app (in class, at events, checking updates, etc.)</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Show how Praksha helps you</h3>
+                                <p style="margin-bottom: 12px;">Example ideas:</p>
+                                <div class="example-box">"I never miss an event thanks to Praksha!"</div>
+                                <div class="example-box">"All my notices in one app!"</div>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Use these tags & mentions:</h3>
+                                <div class="tags-box">
+                                    <div class="tags-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                        </svg>
+                                        <div>
+                                            <p>Hashtags:</p>
+                                            <div class="tag-value">#MyPrakshaReel #PrakshaApp #CampusConnected</div>
+                                        </div>
+                                    </div>
+                                    <div class="tags-item">
+                                        <svg viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M16.56 11.6v5.08a2 2 0 0 1-1.94 2.01h-9.24a1.99 1.99 0 0 1-2-2V9.54a1.99 1.99 0 0 1 1.94-2h7.29"></path>
+                                        </svg>
+                                        <div>
+                                            <p>Tag:</p>
+                                            <div class="tag-value">@praksha.app</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Post your reel</h3>
+                                <ul class="bullet-list">
+                                    <li>Keep it short (15–30 seconds) and energetic</li>
+                                    <li>Use trending music to boost reach</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reward-section">
+                    <div class="reward-header">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path>
+                            <path d="M12 6v6l4.3 2.54"></path>
+                        </svg>
+                        <h2>Reward / Incentive</h2>
+                    </div>
+                    <p>Best reels will be featured on our official Instagram page and may win <span class="highlight">exclusive Praksha goodies!</span></p>
+                </div>
+
+                <div class="cta-section">
+                    <a href="https://instagram.com/praksha.app" class="cta-button">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                        </svg>
+                        Follow Praksha on Instagram
+                        <svg class="sparkle" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </a>
+                    <p class="cta-subtext">Opens Instagram app</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ for the Praksha Community</p>
+        </div>
+    </div>
+</body>
+</html>
